@@ -57,3 +57,4 @@ krater xaritasi. Barcha rasm fayllari loyiha ichida
 ulanmasdan ham (faqat Three.js kutubxonasi CDN orqali yuklanadi) to'liq
 ishlaydi. Ikonlar uchun Font Awesome, shriftlar uchun Google Fonts
 (Orbitron, Exo 2) CDN orqali ulangan.
+# astrobek
