@@ -1,0 +1,50 @@
+{% extends 'astronomy/base.html' %}
+{% block title %}Oy — Koinot Sayohati{% endblock %}
+
+{% block content %}
+<section class="detail-layout">
+
+  <div class="detail-viewer">
+    <div id="moon-scene" class="scene-box" data-texture="{{ moon.texture }}"></div>
+    <p class="scene-hint"><i class="fa-solid fa-arrows-rotate"></i> Sichqoncha bilan torting — aylantiring va kattalashtiring</p>
+  </div>
+
+  <div class="detail-info">
+    <span class="badge-order">Yerning tabiiy yo'ldoshi</span>
+    <h1><i class="fa-solid fa-moon"></i> {{ moon.name }}</h1>
+    <p class="detail-tagline">{{ moon.tagline }}</p>
+    <p class="detail-desc">{{ moon.description }}</p>
+
+    <div class="fact-grid">
+      <div class="fact"><span>Radiusi</span><strong>{{ moon.radius_km }}</strong></div>
+      <div class="fact"><span>Yerdan masofa</span><strong>{{ moon.distance }}</strong></div>
+      <div class="fact"><span>Yer atrofida aylanish</span><strong>{{ moon.orbit_period }}</strong></div>
+      <div class="fact"><span>O'z o'qi atrofida aylanish</span><strong>{{ moon.rotation_period }}</strong></div>
+      <div class="fact"><span>Harorat oralig'i</span><strong>{{ moon.temp }}</strong></div>
+    </div>
+
+    <div class="detail-nav">
+      <a href="{% url 'astronomy:earth' %}" class="nav-btn">
+        <i class="fa-solid fa-earth-asia"></i> Yerni ko'rish
+      </a>
+      <a href="{% url 'astronomy:planets' %}" class="nav-btn nav-btn--ghost">
+        <i class="fa-solid fa-table-cells"></i> Sayyoralar
+      </a>
+    </div>
+  </div>
+
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var el = document.getElementById('moon-scene');
+  initPlanetScene(el, {
+    texture: el.dataset.texture,
+    interactive: true,
+    autoRotateSpeed: 0.002
+  });
+});
+</script>
+{% endblock %}

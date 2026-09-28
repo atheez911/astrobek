@@ -1,0 +1,42 @@
+{% extends 'astronomy/base.html' %}
+{% load static %}
+{% block title %}Koinot Sayohati — Bosh sahifa{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h1 class="hero-title">ASTRO<span>BEK</span></h1>
+  <p class="hero-subtitle">
+    Quyosh sistemasidagi sayyoralar haqida ma'lumotlar
+    va ularning visual ko'rinishi
+  </p>
+</section>
+
+<section class="main-menu">
+  <a href="{% url 'astronomy:planets' %}" class="menu-bar menu-bar--planets">
+    <div class="menu-bar-icon"><i class="fa-solid fa-globe"></i></div>
+    <div class="menu-bar-text">
+      <h2>Sayyoralar</h2>
+      <p>Merkuriydan Neptungacha — 8 ta sayyoralar</p>
+    </div>
+    <div class="menu-bar-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+  </a>
+
+  <a href="{% url 'astronomy:moon' %}" class="menu-bar menu-bar--moon">
+    <div class="menu-bar-icon"><i class="fa-solid fa-moon"></i></div>
+    <div class="menu-bar-text">
+      <h2>Oy</h2>
+      <p>Yerning yo'ldoshini</p>
+    </div>
+    <div class="menu-bar-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+  </a>
+
+  <a href="{% url 'astronomy:earth' %}" class="menu-bar menu-bar--earth">
+    <div class="menu-bar-icon"><i class="fa-solid fa-earth-asia"></i></div>
+    <div class="menu-bar-text">
+      <h2>Yer</h2>
+      <p>Yer, yo'ldoshi bilan birga</p>
+    </div>
+    <div class="menu-bar-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+  </a>
+</section>
+{% endblock %}

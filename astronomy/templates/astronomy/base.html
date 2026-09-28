@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Astronomy{% endblock %}</title>
+
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="{% static 'astronomy/css/style.css' %}">
+{% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<div class="starfield">
+  <div class="stars stars-1"></div>
+  <div class="stars stars-2"></div>
+  <div class="stars stars-3"></div>
+</div>
+
+<header class="topnav">
+  <a href="{% url 'astronomy:home' %}" class="brand">
+    <i class="fa-solid fa-meteor"></i> Astrobek
+  </a>
+  <nav class="topnav-links">
+    <a href="{% url 'astronomy:planets' %}"><i class="fa-solid fa-globe"></i> Sayyoralar</a>
+    <a href="{% url 'astronomy:moon' %}"><i class="fa-solid fa-moon"></i> Oy</a>
+    <a href="{% url 'astronomy:earth' %}"><i class="fa-solid fa-earth-asia"></i> Yer</a>
+  </nav>
+</header>
+
+<main class="page">
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <p>Normatov.A bog'lanish uchun aziknorm9@gmail.com</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+<script>window.ASTRO_IMG_BASE = "{% static 'astronomy/img/' %}";</script>
+<script src="{% static 'astronomy/js/planet3d.js' %}"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>

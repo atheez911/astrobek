@@ -1,0 +1,340 @@
+:root {
+  --bg-deep: #05040f;
+  --bg-mid: #0b1030;
+  --accent-cyan: #4fd8ff;
+  --accent-purple: #9b7bff;
+  --accent-pink: #ff6fd8;
+  --text-main: #eef1ff;
+  --text-dim: #a9b0d6;
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-border: rgba(255, 255, 255, 0.09);
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Exo 2', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(ellipse at top, var(--bg-mid) 0%, var(--bg-deep) 60%, #000 100%);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ---------- CSS yulduzlar foni ---------- */
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: transparent;
+}
+.stars {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: transparent;
+  top: -2000px;
+  left: 0;
+}
+.stars-1 { box-shadow: 1309px 228px #fff, 51px 1518px #fff, 563px 501px #fff, 457px 285px #fff, 1508px 209px #fff, 1385px 1516px #fff, 1827px 1116px #fff, 178px 1209px #fff, 864px 65px #fff, 61px 191px #fff, 447px 476px #fff, 1034px 1232px #fff, 54px 1149px #fff, 407px 1466px #fff, 1330px 1436px #fff, 1116px 859px #fff, 451px 919px #fff, 1206px 569px #fff, 1657px 1780px #fff, 13px 1554px #fff, 1650px 326px #fff, 1429px 865px #fff, 696px 569px #fff, 318px 440px #fff, 1960px 1563px #fff, 689px 209px #fff, 189px 778px #fff, 198px 735px #fff, 1735px 704px #fff, 1236px 541px #fff, 1652px 88px #fff, 1494px 940px #fff, 1098px 255px #fff, 1992px 1888px #fff, 775px 161px #fff, 1130px 600px #fff, 1698px 1287px #fff, 1266px 1813px #fff, 1764px 740px #fff, 1182px 393px #fff, 1442px 142px #fff, 93px 1354px #fff, 466px 1583px #fff, 592px 163px #fff, 1751px 476px #fff, 1774px 206px #fff, 778px 569px #fff, 928px 1301px #fff, 1708px 747px #fff, 333px 758px #fff, 727px 429px #fff, 1372px 546px #fff, 1437px 1918px #fff, 1399px 1327px #fff, 146px 1247px #fff, 1300px 350px #fff, 1093px 1493px #fff, 501px 334px #fff, 946px 777px #fff, 552px 1895px #fff, 1310px 1409px #fff, 1140px 449px #fff, 1402px 664px #fff, 1726px 1573px #fff, 1589px 114px #fff, 469px 1683px #fff, 65px 1648px #fff, 646px 821px #fff, 548px 135px #fff, 432px 1870px #fff, 1931px 1161px #fff, 1794px 1470px #fff, 644px 435px #fff, 1342px 1022px #fff, 810px 1811px #fff, 1872px 1316px #fff, 939px 292px #fff, 542px 285px #fff, 505px 1525px #fff, 1149px 1103px #fff, 538px 1529px #fff, 1197px 877px #fff, 1838px 1195px #fff, 817px 741px #fff, 449px 283px #fff, 1043px 1010px #fff, 186px 1547px #fff, 96px 1763px #fff, 224px 313px #fff, 1285px 327px #fff, 1622px 1393px #fff, 864px 1221px #fff, 130px 788px #fff, 781px 1220px #fff, 958px 1083px #fff, 514px 1988px #fff, 1133px 1762px #fff, 1930px 23px #fff, 1393px 1476px #fff, 234px 1396px #fff, 1812px 1099px #fff, 1537px 546px #fff, 1574px 1312px #fff, 696px 228px #fff, 601px 890px #fff, 323px 929px #fff, 6px 1953px #fff, 1478px 1793px #fff, 1473px 539px #fff, 1990px 1025px #fff, 1560px 365px #fff, 1039px 1869px #fff, 217px 1782px #fff, 1280px 611px #fff, 1723px 1308px #fff, 1039px 1247px #fff, 407px 313px #fff, 765px 1561px #fff, 330px 1104px #fff, 1952px 1594px #fff, 1889px 1086px #fff, 1881px 1px #fff, 1226px 663px #fff, 1000px 39px #fff, 229px 1902px #fff, 743px 1799px #fff, 1703px 1652px #fff, 629px 490px #fff, 118px 493px #fff, 1798px 1161px #fff, 1939px 161px #fff, 175px 1498px #fff, 995px 1671px #fff, 141px 1557px #fff, 1090px 1568px #fff, 257px 262px #fff, 1351px 973px #fff, 1939px 1125px #fff, 338px 542px #fff, 1080px 1786px #fff, 1242px 866px #fff, 1975px 433px #fff, 1902px 1104px #fff, 1546px 1494px #fff, 1412px 411px #fff, 1460px 638px #fff, 817px 1375px #fff, 1330px 764px #fff, 897px 1842px #fff, 1059px 924px #fff, 247px 507px #fff, 460px 131px #fff, 692px 43px #fff, 1204px 1134px #fff, 471px 1205px #fff, 451px 14px #fff, 145px 1449px #fff, 1292px 120px #fff, 468px 138px #fff, 1854px 64px #fff, 1760px 676px #fff, 145px 1052px #fff, 487px 570px #fff, 1370px 994px #fff, 438px 1104px #fff, 270px 1481px #fff, 1915px 1807px #fff, 1169px 1180px #fff, 968px 497px #fff, 1606px 968px #fff, 1653px 833px #fff, 389px 193px #fff, 198px 1349px #fff, 882px 725px #fff, 867px 841px #fff, 956px 1769px #fff, 1493px 110px #fff, 1379px 1338px #fff, 1323px 201px #fff, 124px 824px #fff, 1491px 694px #fff, 1639px 1764px #fff, 223px 509px #fff, 392px 389px #fff, 1098px 918px #fff, 287px 864px #fff, 375px 570px #fff, 947px 511px #fff, 1790px 1890px #fff, 154px 907px #fff, 1654px 1764px #fff, 1753px 1127px #fff, 200px 103px #fff, 1335px 1107px #fff, 1712px 30px #fff, 1984px 191px #fff, 1897px 1543px #fff, 1738px 484px #fff, 340px 832px #fff, 994px 985px #fff, 437px 1770px #fff, 821px 1848px #fff, 120px 337px #fff, 776px 4px #fff, 799px 543px #fff, 1897px 1605px #fff, 1607px 931px #fff, 584px 866px #fff, 1426px 1960px #fff, 1496px 1604px #fff, 1138px 1355px #fff, 1471px 996px #fff, 317px 388px #fff, 607px 445px #fff, 1983px 119px #fff, 1186px 1506px #fff, 1110px 124px #fff, 1531px 642px #fff, 117px 102px #fff, 1196px 976px #fff, 1029px 1882px #fff, 1746px 1087px #fff, 322px 116px #fff, 1967px 1040px #fff, 164px 1743px #fff, 380px 140px #fff, 1218px 139px #fff, 1382px 1765px #fff, 481px 826px #fff, 245px 1928px #fff, 1823px 1166px #fff, 504px 1185px #fff, 1217px 81px #fff, 1268px 167px #fff, 858px 1346px #fff, 1195px 1157px #fff, 1070px 647px #fff, 1914px 534px #fff, 418px 1371px #fff, 1466px 643px #fff, 488px 543px #fff, 810px 268px #fff, 1375px 1321px #fff, 614px 936px #fff, 647px 1902px #fff, 1539px 1916px #fff, 148px 19px #fff, 938px 1272px #fff, 1153px 204px #fff, 150px 1101px #fff, 436px 1036px #fff, 543px 271px #fff, 1911px 714px #fff, 1804px 140px #fff, 1800px 500px #fff, 756px 583px #fff, 323px 897px #fff, 1707px 1112px #fff, 1440px 619px #fff, 1252px 1652px #fff, 1339px 1083px #fff, 16px 1367px #fff, 1673px 1135px #fff, 613px 1908px #fff, 1358px 212px #fff, 1922px 1798px #fff, 275px 541px #fff, 236px 1822px #fff, 219px 1520px #fff, 1133px 318px #fff, 557px 577px #fff, 1238px 431px #fff, 1469px 702px #fff, 416px 1407px #fff, 1298px 1746px #fff, 540px 1035px #fff, 1000px 514px #fff, 1854px 1859px #fff, 1732px 104px #fff, 189px 1299px #fff, 867px 1698px #fff, 566px 90px #fff, 7px 683px #fff, 1579px 267px #fff, 1304px 536px #fff, 330px 1518px #fff, 904px 1129px #fff, 1445px 875px #fff, 1148px 19px #fff, 229px 154px #fff, 1935px 1808px #fff, 1415px 1851px #fff, 305px 1117px #fff, 73px 1709px #fff, 756px 1192px #fff, 1131px 303px #fff, 880px 261px #fff, 85px 631px #fff, 746px 1841px #fff, 1910px 1630px #fff; animation: drift 140s linear infinite; opacity: 0.9; }
+.stars-2 { box-shadow: 1991px 1762px #cfe3ff, 81px 1840px #cfe3ff, 732px 430px #cfe3ff, 1396px 511px #cfe3ff, 1365px 210px #cfe3ff, 724px 1597px #cfe3ff, 1146px 1810px #cfe3ff, 1791px 832px #cfe3ff, 1994px 1271px #cfe3ff, 1534px 316px #cfe3ff, 1895px 1904px #cfe3ff, 484px 1770px #cfe3ff, 332px 1999px #cfe3ff, 1638px 1660px #cfe3ff, 362px 1805px #cfe3ff, 844px 50px #cfe3ff, 367px 1508px #cfe3ff, 1893px 680px #cfe3ff, 1602px 1906px #cfe3ff, 843px 1642px #cfe3ff, 1371px 1769px #cfe3ff, 1505px 1660px #cfe3ff, 508px 546px #cfe3ff, 326px 1612px #cfe3ff, 1436px 221px #cfe3ff, 783px 1786px #cfe3ff, 79px 1758px #cfe3ff, 963px 455px #cfe3ff, 408px 1672px #cfe3ff, 1880px 942px #cfe3ff, 716px 625px #cfe3ff, 1680px 1628px #cfe3ff, 1784px 466px #cfe3ff, 456px 48px #cfe3ff, 1351px 395px #cfe3ff, 816px 672px #cfe3ff, 570px 1770px #cfe3ff, 142px 1980px #cfe3ff, 1583px 571px #cfe3ff, 719px 1313px #cfe3ff, 1043px 818px #cfe3ff, 1391px 1727px #cfe3ff, 1098px 678px #cfe3ff, 1923px 56px #cfe3ff, 236px 1796px #cfe3ff, 1987px 534px #cfe3ff, 365px 1189px #cfe3ff, 1971px 543px #cfe3ff, 78px 222px #cfe3ff, 1221px 889px #cfe3ff, 707px 1492px #cfe3ff, 1610px 642px #cfe3ff, 893px 1241px #cfe3ff, 1047px 236px #cfe3ff, 788px 1842px #cfe3ff, 1180px 389px #cfe3ff, 521px 90px #cfe3ff, 1451px 893px #cfe3ff, 3px 1064px #cfe3ff, 1895px 1651px #cfe3ff, 1102px 1406px #cfe3ff, 1473px 1925px #cfe3ff, 1519px 1509px #cfe3ff, 1373px 403px #cfe3ff, 745px 883px #cfe3ff, 143px 1943px #cfe3ff, 1360px 1885px #cfe3ff, 676px 1276px #cfe3ff, 642px 1358px #cfe3ff, 1736px 255px #cfe3ff, 1474px 1843px #cfe3ff, 615px 1038px #cfe3ff, 633px 1365px #cfe3ff, 836px 668px #cfe3ff, 824px 1427px #cfe3ff, 605px 1135px #cfe3ff, 260px 392px #cfe3ff, 861px 1361px #cfe3ff, 1925px 776px #cfe3ff, 1387px 1532px #cfe3ff, 1848px 356px #cfe3ff, 1260px 1165px #cfe3ff, 616px 831px #cfe3ff, 1122px 1707px #cfe3ff, 0px 622px #cfe3ff, 587px 430px #cfe3ff, 880px 1609px #cfe3ff, 1187px 1242px #cfe3ff, 1340px 659px #cfe3ff, 952px 904px #cfe3ff, 905px 1383px #cfe3ff, 437px 1046px #cfe3ff, 969px 1625px #cfe3ff, 1845px 1965px #cfe3ff, 1630px 1507px #cfe3ff, 347px 1349px #cfe3ff, 173px 581px #cfe3ff, 1055px 1359px #cfe3ff, 1296px 1268px #cfe3ff, 686px 191px #cfe3ff, 1676px 1949px #cfe3ff, 1538px 481px #cfe3ff, 1377px 635px #cfe3ff, 460px 1651px #cfe3ff, 407px 301px #cfe3ff, 50px 94px #cfe3ff, 501px 973px #cfe3ff, 1251px 1740px #cfe3ff, 1573px 149px #cfe3ff, 932px 848px #cfe3ff, 1814px 1289px #cfe3ff, 1178px 398px #cfe3ff, 1471px 1426px #cfe3ff, 786px 1012px #cfe3ff, 818px 499px #cfe3ff, 302px 1343px #cfe3ff, 1408px 11px #cfe3ff, 1828px 1537px #cfe3ff, 1762px 1577px #cfe3ff, 1813px 218px #cfe3ff; width: 2.5px; height: 2.5px; animation: drift 220s linear infinite; opacity: 0.75; }
+.stars-3 { box-shadow: 1594px 870px #9fd0ff, 448px 360px #9fd0ff, 1646px 1961px #9fd0ff, 1425px 1060px #9fd0ff, 951px 102px #9fd0ff, 1141px 510px #9fd0ff, 1878px 1737px #9fd0ff, 248px 934px #9fd0ff, 273px 1641px #9fd0ff, 951px 1367px #9fd0ff, 1087px 1144px #9fd0ff, 1219px 649px #9fd0ff, 1945px 1546px #9fd0ff, 1825px 906px #9fd0ff, 1254px 1669px #9fd0ff, 1473px 1826px #9fd0ff, 1033px 873px #9fd0ff, 1701px 1857px #9fd0ff, 1122px 913px #9fd0ff, 1837px 325px #9fd0ff, 1523px 1764px #9fd0ff, 972px 921px #9fd0ff, 530px 1539px #9fd0ff, 506px 1720px #9fd0ff, 1305px 567px #9fd0ff, 1568px 1592px #9fd0ff, 1067px 992px #9fd0ff, 1283px 489px #9fd0ff, 562px 900px #9fd0ff, 158px 1461px #9fd0ff, 585px 480px #9fd0ff, 556px 687px #9fd0ff, 654px 1828px #9fd0ff, 1106px 165px #9fd0ff, 283px 308px #9fd0ff, 473px 784px #9fd0ff, 1421px 312px #9fd0ff, 1446px 438px #9fd0ff, 131px 849px #9fd0ff, 834px 677px #9fd0ff, 1111px 954px #9fd0ff, 851px 127px #9fd0ff, 423px 1705px #9fd0ff, 860px 797px #9fd0ff, 1853px 1576px #9fd0ff, 1196px 1937px #9fd0ff, 1424px 40px #9fd0ff, 1754px 1803px #9fd0ff, 1567px 1179px #9fd0ff, 779px 976px #9fd0ff; width: 3px; height: 3px; animation: drift 320s linear infinite, twinkle 4s ease-in-out infinite; opacity: 0.6; }
+
+@keyframes drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(2000px); }
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.9; }
+}
+
+/* ---------- Top nav ---------- */
+.topnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 6vw;
+  flex-wrap: wrap;
+  gap: 12px;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--card-border);
+}
+.brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+  color: var(--accent-cyan);
+  text-shadow: 0 0 14px rgba(79, 216, 255, 0.55);
+}
+.brand i { margin-right: 8px; }
+.topnav-links { display: flex; gap: 22px; }
+.topnav-links a {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+.topnav-links a:hover { color: var(--accent-cyan); text-shadow: 0 0 10px rgba(79,216,255,0.6); }
+.topnav-links i { margin-right: 6px; }
+
+/* ---------- Layout ---------- */
+.page { padding: 40px 6vw 70px; max-width: 1280px; margin: 0 auto; }
+
+/* ---------- Hero (bosh sahifa) ---------- */
+.hero { text-align: center; padding: 40px 0 20px; }
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  letter-spacing: 4px;
+  margin: 0 0 14px;
+  color: var(--text-main);
+}
+.hero-title span {
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple), var(--accent-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero-subtitle {
+  color: var(--text-dim);
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* ---------- Bosh menyu: 3 ta bar ---------- */
+.main-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 50px;
+}
+.menu-bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 26px 32px;
+  border-radius: 18px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.menu-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  background: linear-gradient(90deg, rgba(79,216,255,0.12), rgba(155,123,255,0.08));
+}
+.menu-bar:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 12px 34px rgba(79, 216, 255, 0.15);
+}
+.menu-bar:hover::before { opacity: 1; }
+.menu-bar-icon {
+  font-size: 2.1rem;
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.15), rgba(255,255,255,0.02));
+  color: var(--accent-cyan);
+  z-index: 1;
+}
+.menu-bar--moon .menu-bar-icon { color: #dfe3f0; }
+.menu-bar--earth .menu-bar-icon { color: #6fd689; }
+.menu-bar-text { flex: 1; z-index: 1; }
+.menu-bar-text h2 {
+  font-family: var(--font-display);
+  margin: 0 0 6px;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+.menu-bar-text p { margin: 0; color: var(--text-dim); font-size: 0.95rem; }
+.menu-bar-arrow { font-size: 1.2rem; color: var(--text-dim); z-index: 1; }
+
+/* ---------- Page header ---------- */
+.page-header { text-align: center; margin-bottom: 36px; }
+.page-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  letter-spacing: 1px;
+  margin: 0 0 10px;
+}
+.page-header p { color: var(--text-dim); margin: 0; }
+
+/* ---------- Sayyoralar grid ---------- */
+.planet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 22px;
+}
+.planet-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 18px 18px 22px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.planet-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--pcolor, var(--accent-cyan));
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35), 0 0 24px color-mix(in srgb, var(--pcolor, #4fd8ff) 30%, transparent);
+}
+.planet-card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+.planet-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 160px;
+  margin: 6px auto 14px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.planet-card h3 {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+.planet-card h3 i { margin-right: 6px; color: var(--pcolor, var(--accent-cyan)); }
+.planet-tagline { margin: 0; color: var(--text-dim); font-size: 0.85rem; }
+
+/* ---------- Detail layout ---------- */
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+@media (max-width: 880px) {
+  .detail-layout { grid-template-columns: 1fr; }
+}
+
+.detail-viewer {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 22px;
+  padding: 14px;
+  position: sticky;
+  top: 20px;
+}
+.scene-box {
+  width: 100%;
+  height: 440px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.05), transparent 70%);
+}
+.scene-hint {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  margin: 10px 0 2px;
+}
+.scene-hint i { margin-right: 6px; }
+
+.detail-info { padding-top: 6px; }
+.badge-order {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--accent-cyan);
+  border: 1px solid rgba(79,216,255,0.35);
+  border-radius: 999px;
+  padding: 4px 12px;
+  margin-bottom: 14px;
+}
+.detail-info h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  margin: 0 0 6px;
+}
+.detail-tagline { color: var(--accent-purple); margin: 0 0 16px; font-size: 1.05rem; }
+.detail-desc { color: var(--text-dim); line-height: 1.7; margin: 0 0 26px; }
+
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 30px;
+}
+.fact {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+.fact span { display: block; color: var(--text-dim); font-size: 0.75rem; margin-bottom: 4px; }
+.fact strong { font-size: 1rem; color: var(--text-main); }
+
+.detail-nav { display: flex; flex-wrap: wrap; gap: 12px; }
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+  color: #04070f;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.nav-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(79,216,255,0.3); }
+.nav-btn--ghost {
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--card-border);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--card-border);
+}
+
+
+/* ======================================================= */
+/* BUTUN SAHIFANI TELEFONDA PROPORSIONAL KICHIKLASHTIRISH  */
+/* ======================================================= */
+@media (max-width: 768px) {
+  body {
+    /* Ekran eniga qarab butun sahifani birdek kichraytiradi */
+    zoom: 0.55; /* Agar juda kichik bo'lib qolsa, 0.65 qilib ko'ring */
+    -moz-transform: scale(0.55); /* Firefox brauzeri uchun */
+    -moz-transform-origin: 0 0;
+  }
+}

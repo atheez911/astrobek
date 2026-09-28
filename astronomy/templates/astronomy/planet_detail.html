@@ -1,0 +1,59 @@
+{% extends 'astronomy/base.html' %}
+{% block title %}{{ planet.name }} — Koinot Sayohati{% endblock %}
+
+{% block content %}
+<section class="detail-layout">
+
+  <div class="detail-viewer">
+    <div id="planet-scene" class="scene-box"
+         data-texture="{{ planet.texture }}"
+         data-ring="{{ planet.ring_texture|default:'' }}"
+         data-clouds="{% if planet.slug == 'yer' %}earth_clouds_alpha.jpg{% endif %}"></div>
+    <p class="scene-hint"><i class="fa-solid fa-arrows-rotate"></i></p>
+  </div>
+
+  <div class="detail-info">
+    <span class="badge-order">#{{ planet.order }} chi sayyora</span>
+    <h1><i class="{{ planet.icon }}"></i> {{ planet.name }}</h1>
+    <p class="detail-tagline">{{ planet.tagline }}</p>
+    <p class="detail-desc">{{ planet.description }}</p>
+
+    <div class="fact-grid">
+      <div class="fact"><span>Radiusi</span><strong>{{ planet.radius_km }}</strong></div>
+      <div class="fact"><span>Quyoshdan masofa</span><strong>{{ planet.distance }}</strong></div>
+      <div class="fact"><span>Quyosh atrofida aylanish</span><strong>{{ planet.orbit_period }}</strong></div>
+      <div class="fact"><span>O'z o'qi atrofida aylanish</span><strong>{{ planet.rotation_period }}</strong></div>
+      <div class="fact"><span>Yo'ldoshlari</span><strong>{{ planet.moons }}</strong></div>
+      <div class="fact"><span>O'rtacha harorat</span><strong>{{ planet.temp }}</strong></div>
+    </div>
+
+    <div class="detail-nav">
+      <a href="{% url 'astronomy:planet_detail' prev_planet.slug %}" class="nav-btn">
+        <i class="fa-solid fa-arrow-left"></i> {{ prev_planet.name }}
+      </a>
+      <a href="{% url 'astronomy:planets' %}" class="nav-btn nav-btn--ghost">
+        <i class="fa-solid fa-table-cells"></i> Barchasi
+      </a>
+      <a href="{% url 'astronomy:planet_detail' next_planet.slug %}" class="nav-btn">
+        {{ next_planet.name }} <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var el = document.getElementById('planet-scene');
+  initPlanetScene(el, {
+    texture: el.dataset.texture,
+    ringTexture: el.dataset.ring || null,
+    cloudsAlpha: el.dataset.clouds || null,
+    interactive: true,
+    autoRotateSpeed: 0.0025
+  });
+});
+</script>
+{% endblock %}

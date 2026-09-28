@@ -1,0 +1,37 @@
+{% extends 'astronomy/base.html' %}
+{% block title %}Sayyoralar — Koinot Sayohati{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <h1><i class="fa-solid fa-globe"></i> Quyosh sistemasi sayyoralari</h1>
+  <p>Sayyoralar haqida ma'lumotlar va ularning visual korinishi</p>
+</section>
+
+<section class="planet-grid">
+  {% for planet in planets %}
+  <a href="{% url 'astronomy:planet_detail' planet.slug %}" class="planet-card" style="--pcolor:{{ planet.base_color }};">
+    <div class="planet-card-badge">{{ planet.order }}</div>
+    <div class="planet-thumb" data-texture="{{ planet.texture }}" data-ring="{{ planet.ring_texture|default:'' }}" data-clouds="{% if planet.slug == 'yer' %}earth_clouds_alpha.jpg{% endif %}"></div>
+    <h3><i class="{{ planet.icon }}"></i> {{ planet.name }}</h3>
+    <p class="planet-tagline">{{ planet.tagline }}</p>
+  </a>
+  {% endfor %}
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.planet-thumb').forEach(function (el) {
+    initPlanetScene(el, {
+      texture: el.dataset.texture,
+      ringTexture: el.dataset.ring || null,
+      cloudsAlpha: el.dataset.clouds || null,
+      interactive: false,
+      autoRotateSpeed: 0.01,
+      compact: true
+    });
+  });
+});
+</script>
+{% endblock %}

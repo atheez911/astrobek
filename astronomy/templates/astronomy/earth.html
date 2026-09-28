@@ -1,0 +1,55 @@
+{% extends 'astronomy/base.html' %}
+{% block title %}Yer — Koinot Sayohati{% endblock %}
+
+{% block content %}
+<section class="detail-layout">
+
+  <div class="detail-viewer">
+    <div id="earth-scene" class="scene-box"
+         data-texture="{{ earth.texture }}"
+         data-clouds="earth_clouds_alpha.jpg"></div>
+    <p class="scene-hint"><i class="fa-solid fa-arrows-rotate"></i> Sichqoncha bilan torting — aylantiring va kattalashtiring</p>
+  </div>
+
+  <div class="detail-info">
+    <span class="badge-order">#3 — Yer</span>
+    <h1><i class="fa-solid fa-earth-asia"></i> {{ earth.name }}</h1>
+    <p class="detail-tagline">{{ earth.tagline }}</p>
+    <p class="detail-desc">{{ earth.description }}</p>
+
+    <div class="fact-grid">
+      <div class="fact"><span>Radiusi</span><strong>{{ earth.radius_km }}</strong></div>
+      <div class="fact"><span>Quyoshdan masofa</span><strong>{{ earth.distance }}</strong></div>
+      <div class="fact"><span>Quyosh atrofida aylanish</span><strong>{{ earth.orbit_period }}</strong></div>
+      <div class="fact"><span>O'z o'qi atrofida aylanish</span><strong>{{ earth.rotation_period }}</strong></div>
+      <div class="fact"><span>Yo'ldoshlari</span><strong>{{ earth.moons }}</strong></div>
+      <div class="fact"><span>O'rtacha harorat</span><strong>{{ earth.temp }}</strong></div>
+    </div>
+
+    <div class="detail-nav">
+      <a href="{% url 'astronomy:moon' %}" class="nav-btn">
+        <i class="fa-solid fa-moon"></i> Oyni ko'rish
+      </a>
+      <a href="{% url 'astronomy:planets' %}" class="nav-btn nav-btn--ghost">
+        <i class="fa-solid fa-table-cells"></i> Sayyoralar
+      </a>
+    </div>
+  </div>
+
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var el = document.getElementById('earth-scene');
+  initPlanetScene(el, {
+    texture: el.dataset.texture,
+    cloudsAlpha: el.dataset.clouds,
+    interactive: true,
+    autoRotateSpeed: 0.003,
+    withMoon: true
+  });
+});
+</script>
+{% endblock %}
